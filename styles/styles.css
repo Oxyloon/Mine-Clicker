@@ -1,0 +1,19 @@
+* {
+    background-image: url(wallpaper.png);
+    font-family: 'Minecraft', sans-serif;
+}
+
+header {
+    text-align: center;
+    text-decoration: none;
+}
+
+main {
+    text-align: center;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    text-decoration: none;
+}
