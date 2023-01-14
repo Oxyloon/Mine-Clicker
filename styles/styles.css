@@ -1,6 +1,7 @@
 * {
     background-image: url(wallpaper.png);
     font-family: 'Minecraft', sans-serif;
+    cursor: url("Cursor.cur"), pointer;
 }
 
 header {
@@ -11,6 +12,10 @@ header {
 main {
     text-align: center;
     text-decoration: none;
+}
+
+.buttonBlock {
+    background-image: url(dirt.png);
 }
 
 footer {
