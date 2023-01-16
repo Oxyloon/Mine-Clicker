@@ -10,15 +10,18 @@ header {
 }
 
 main {
-    text-align: center;
-    text-decoration: none;
-}
-
-.buttonBlock {
-    background-image: url(dirt.png);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 footer {
     text-align: center;
-    text-decoration: none;
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }

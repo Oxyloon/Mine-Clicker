@@ -1,6 +1,6 @@
-var clics = 0;
+var clicks = 0;
 
 function Clics() {
-    clics +=1;
-    document.getElementById('clics-text').innerHTML = "Nombre de clics : " + clics;
+    clicks +=1;
+    document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
 }
