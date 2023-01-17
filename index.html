@@ -4,29 +4,30 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/styles/favicon.ico">
-        <link rel="stylesheet" href="/styles/styles.css">
+        <link rel="icon" href="styles/favicon.ico">
+        <link rel="stylesheet" href="styles/styles.css">
         <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
-        <script type="text/javascript" src="/script.js"></script>
+        <script type="text/javascript" src="script.js"></script>
             <title>Mine-Cliker</title>
     </head>
     <body>
         <div>
             <header>
                 <h1>Minecraft Clicker</h1>
+                    <p id="blocksTT">Nombre de blocks detruits : 0</p>
                     <p id="clicks">Nombre de clics : 0</p>
-                    <p id="">Nombre de blocks detruits : 0</p>
-                    <p id="">Bonus recoltes : 0</p>
+                    <p id="clicksTT">Nombre de clics au total : 0 </p>
+                    <p id="bonus">Bonus recoltes : 0</p>
                 <br>
                 <h2>Bonus :</h2>
-                <input onclick="" type="image" src="/styles/tnt.png" alt="Minecraft_Clicker_Bonus1">
-                <input onclick="" type="image" src="/styles/wither.png" alt="Minecraft_Clicker_Bonus2">
-                <input onclick="" type="image" src="/styles/herobrine.jpg" alt="Minecraft_Clicker_Bonus3">
+                <input onclick="bonus1()" type="image" src="styles/tnt.png" alt="Minecraft_Clicker_Bonus1">
+                <input onclick="bonus2()" type="image" src="styles/wither.png" alt="Minecraft_Clicker_Bonus2">
+                <input onclick="bonus3()" type="image" src="styles/herobrine.jpg" alt="Minecraft_Clicker_Bonus3">
             </header>
 
             
             <main>
-                <input onclick="Clics()" type="image" src="/styles/dirt.png" alt="Minecraft_Clicker_Block">
+                <input onclick="clics()" type="image" src="styles/dirt.png" alt="Minecraft_Clicker_Block">
             </main>
 
 
