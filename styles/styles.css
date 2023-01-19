@@ -1,12 +1,32 @@
-* {
+body {
     background-image: url(wallpaper.png);
-    font-family: 'Minecraft', sans-serif;
-    cursor: url("Cursor.cur"), pointer;
 }
+* {
+    cursor: url("Cursor.cur"), pointer;
+    font-family: 'Minecraft', sans-serif;
+}
+
 
 header {
     text-align: center;
     text-decoration: none;
+}
+h1{
+    color: rgb(22, 119, 22);
+}
+
+button {
+    border: transparent;
+    background-color: transparent; 
+    font-size: 1em; 
+    box-shadow: transparent;
+}
+.bonus {
+    background-color: rgba(255, 255, 255, 0.342); 
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
 }
 
 main {
@@ -14,6 +34,11 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+a {
+    color: rgb(1, 79, 148);
+    text-decoration: none;
 }
 
 footer {
