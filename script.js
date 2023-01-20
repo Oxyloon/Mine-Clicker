@@ -14,7 +14,7 @@ var audio2 = new Audio('styles/tnt_explosion.mp3');
 var audio3 = new Audio('styles/big_tnt_explosion.mp3');
 
 // Variable permettant de lister les différentes images 
-var images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stone_bricks.png'];
+var images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png'];
 
 // Initialisation du compteur d'images
 var counter = 0;
