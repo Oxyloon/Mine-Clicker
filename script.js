@@ -3,7 +3,16 @@ var clicksTT = 0;
 var blocks = 0;
 var blocksTT = 0;
 var bonus = 0;
+var count = 0;
+var count_bonus1 = 0;
+// Variable permettant de lister les différentes images 
+var images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png'];
+// Initialisation du compteur d'images
+var counter = 0;
+// Selection de la div ou se trouve l'image 
+var img = document.querySelector("main");
 
+// document.getElementById("main-image").src=images[0];
 function clics() {
     //nombre de clics total
     clicksTT +=1;
@@ -13,10 +22,12 @@ function clics() {
         document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
                 //au bout de 10 clics = 1 block
             if (clicks == 10) {
+                counter ++;
                 blocksTT +=1;
                 blocks +=1;
                 document.getElementById('blocksTT').innerHTML = "Nombre de blocks detruits : " + blocksTT;
                 clicks -=10;
+                document.getElementById("main-image").src=images[counter %4]
                 //au bout de 5 bloc detruit = 1 bonus
             } if (blocks == 5) {
                 bonus +=1;
@@ -25,10 +36,10 @@ function clics() {
             }
 }
 
-function bonus1() { // x2 a chaque clics
+function bonus1() { // x2 a chaque clics    
     if (bonus >=2) {
-        bonus -=2;
         clicks *=2;
+        bonus -=2;
         document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
     } else {
         alert("Tu n'as pas assez de points bonus !");
