@@ -1,9 +1,11 @@
 body {
     background-image: url(wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 * {
     cursor: url("Cursor.cur"), pointer;
-    font-family: 'Minecraft', sans-serif;
+    font-family: 'Minecraft';
 }
 
 
