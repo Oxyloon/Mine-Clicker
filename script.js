@@ -1,26 +1,26 @@
 // Clicks et le nombre de clicks au total
-var clicks = 0;
-var clicksTT = 0;
+let clicks = 0;
+let clicksTT = 0;
 
 // Blocks et le nombre de blocks au total
-var blocks = 0;
-var blocksTT = 0;
+let blocks = 0;
+let blocksTT = 0;
 
-var bonus = 0;
-var bonusactive = 0;
+let bonus = 0;
+let bonusclicks = 0;
 // Les audios du bonus 2 et 3
-var audio1 = new Audio('styles/anvil.mp3');
-var audio2 = new Audio('styles/tnt_explosion.mp3');
-var audio3 = new Audio('styles/big_tnt_explosion.mp3');
+let audio1 = new Audio('styles/anvil.mp3');
+let audio2 = new Audio('styles/tnt_explosion.mp3');
+let audio3 = new Audio('styles/big_tnt_explosion.mp3');
 
 // Variable permettant de lister les différentes images 
-var images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
+let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
 
 // Initialisation du compteur d'images
-var counter = 0;
+let counter = 0;
 
 // Selection de la div ou se trouve l'image 
-var img = document.querySelector("main");
+let img = document.querySelector("main");
 
 function clics() {
     //nombre de clics total
@@ -43,19 +43,18 @@ function clics() {
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 blocks -=5;
             }
-            if (bonusactive >=1){
-                console.log("Le bonus +2 est activé ")
-                clicks +=1;
+            if (bonusclicks >=1){
+                clicks += bonusclicks;
+                console.log(bonusclicks); //affiche dans la console le nombre de bonus de clicks en plus
             }
 }
 
 function bonus1() { // +2 a chaque clicks    
     if (bonus >=2) {
             bonus -=2;
+            bonusclicks +=1;
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 audio1.play();
-                bonusactive +=1;
-                console.log("Le nombre de bonus actif est de : " + bonusactive);
     } else {
         alert("Tu n'as pas assez de points bonus !");
     }
