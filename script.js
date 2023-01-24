@@ -7,7 +7,7 @@ var blocks = 0;
 var blocksTT = 0;
 
 var bonus = 0;
-
+var bonusactive = 0;
 // Les audios du bonus 2 et 3
 var audio1 = new Audio('styles/anvil.mp3');
 var audio2 = new Audio('styles/tnt_explosion.mp3');
@@ -30,18 +30,22 @@ function clics() {
         clicks +=1;
         document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
                 //au bout de 10 clics = 1 block
-            if (clicks == 2) {
+            if (clicks >= 64) {
                 counter ++;
                     blocksTT +=1;
                     blocks +=1;
                     document.getElementById('blocksTT').innerHTML = "Nombre de blocks detruits : " + blocksTT;
-                    clicks -=2;
+                    clicks -=64;
                     document.getElementById("main-image").src=images[counter %4]
                 //au bout de 5 bloc detruit = 1 bonus
-            } if (blocks == 5) {
+            } if (blocks >= 5) {
                 bonus +=1;
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 blocks -=5;
+            }
+            if (bonusactive >=1){
+                console.log("Le bonus x2 est activé ")
+                clicks +=1;
             }
 }
 
@@ -50,10 +54,13 @@ function bonus1() { // x2 a chaque clics
             bonus -=2;
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 audio1.play();
+                bonusactive +=1;
+                console.log("Le nombre de bonus actif est de : " + bonusactive);
     } else {
         alert("Tu n'as pas assez de points bonus !");
     }
 }
+
 function bonus2() { // +1 000 blocks detruits
     if (bonus >=5) {
         audio2.play();
