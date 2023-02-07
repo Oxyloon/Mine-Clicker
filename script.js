@@ -4,19 +4,11 @@ let blocks = 0;
 let blocksTotal = 0;
 let bonus = 0;
 let bonusclicks = 0;
-let clicksMultiplier = 1;
+let clicksAdd = 1;
 let counter = 0;
-
-document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
-document.getElementById('clicksTotal').innerHTML = "Nombre de clics au total : " + clicksTotal;
-document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
-document.getElementById('bonus').innerHTML = "Pts disponible : " + bonus;
-document.getElementById('clicksMultiplier').innerHTML = "Bonus actuel : + " + clicksMultiplier;
 
 let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
 let img = document.querySelector("main");
-
-
 
 
 function clics() {
@@ -51,31 +43,27 @@ localStorage.setItem('clicks',clicks);
 localStorage.setItem('clicksTotal',clicksTotal);
 localStorage.setItem('blocksTotal',blocksTotal);
 localStorage.setItem('bonus',bonus);
-localStorage.setItem('clicksMultiplier',clicksMultiplier);
+localStorage.setItem('clicksAdd',clicksAdd);
 }
 
 
-
-
-function bonus1() { 
-let audio1 = new Audio('styles/anvil.mp3');
+function bonus1() {
+let audio1 = new Audio('styles/anvil.mp3'); 
     if (bonus >=2) {
-            if (clicksMultiplier >= 32){
+            if (clicksAdd >= 10){
                 alert("Tu es au maximum des améliorations !");
             } else {
                 bonus -=2;
                 bonusclicks +=1;
-                clicksMultiplier +=1;
+                clicksAdd +=1;
                     document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
-                    document.getElementById('clicksMultiplier').innerHTML = "Bonus actuel : +" + clicksMultiplier;
+                    document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
                     audio1.play();
             }            
         } else {
             alert("Tu n'as pas assez de points bonus !");
     }
 }
-
-
 
 
 function bonus2() {
@@ -90,8 +78,6 @@ let audio2 = new Audio('styles/tnt_explosion.mp3');
         alert("Tu n'as pas assez de points bonus !");
     }
 }
-
-
 
 
 function bonus3() {
