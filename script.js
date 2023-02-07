@@ -29,7 +29,7 @@ function clics() {
         blocksTotal +=1;
         blocks +=1;
             document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
-        clicks -=32;
+        clicks =0;
             document.getElementById("main-image").src=images[counter %5]
         } 
 
@@ -50,15 +50,20 @@ function clics() {
 
 
 function bonus1() { 
+   
     if (bonus >=2) {
-            bonus -=2;
-            bonusclicks +=1;
-            clicksbonus +=1;
-                document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
-                document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
-                audio1.play();
-    } else {
-        alert("Tu n'as pas assez de points bonus !");
+            if (clicksbonus >= 32){
+                alert("Tu es au maximum des améliorations !");
+            } else {
+                bonus -=2;
+                bonusclicks +=1;
+                clicksbonus +=1;
+                    document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
+                    document.getElementById('clicksbonus').innerHTML = "Bonus actuel : +" + clicksbonus;
+                    audio1.play();
+            }            
+        } else {
+            alert("Tu n'as pas assez de points bonus !");
     }
 }
 

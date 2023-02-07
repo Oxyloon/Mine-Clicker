@@ -2,6 +2,7 @@ body {
     background-image: url(wallpaper.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-size: auto;
 }
 * {
     cursor: url("Cursor.cur"), pointer;
@@ -39,6 +40,7 @@ main {
     border-style: ridge;
     border-radius: 5px;
     border-color: transparent;
+    
 }
 
 a {
@@ -55,3 +57,4 @@ footer {
     right: 0px;
     margin-bottom: 0px;
 }
+
