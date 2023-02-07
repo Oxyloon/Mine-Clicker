@@ -1,20 +1,29 @@
-let clicks = 0;
-let clicksTotal = 0;
+let clicks = getFromStorage("clicks");
+let clicksTotal = getFromStorage("clicksTotal");
 let blocks = 0;
-let blocksTotal = 0;
-let bonus = 0;
+let blocksTotal = getFromStorage("blocksTotal");
+let bonus = getFromStorage("bonus");
 let bonusclicks = 0;
-let clicksAdd = 1;
+let clicksAdd = getFromStorage("clicksAdd");
 let counter = 0;
+
+if (clicksAdd == 0) {
+    clicksAdd = 1;
+}
 
 let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
 let img = document.querySelector("main");
 
+document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
+document.getElementById('clicksTotal').innerHTML = "Nombre de clics au total : " + clicksTotal;
+document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
+document.getElementById('bonus').innerHTML = "Pts disponible : " + bonus;
+document.getElementById('clicksAdd').innerHTML = "Bonus actuel : + " + clicksAdd;
 
 function clics() {
     clicksTotal +=1;
     document.getElementById('clicksTotal').innerHTML = "Nombre de clics au total : " + clicksTotal;
-        clicks +=1;
+        clicks += clicksAdd;
         document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
             
         if (clicks >= 32) 
@@ -55,7 +64,7 @@ let audio1 = new Audio('styles/anvil.mp3');
             } else {
                 bonus -=2;
                 bonusclicks +=1;
-                clicksAdd +=1;
+                clicksAdd +1;
                     document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                     document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
                     audio1.play();
@@ -90,5 +99,13 @@ let audio3 = new Audio('styles/big_tnt_explosion.mp3');
                 document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
     } else {
         alert("Tu n'as pas assez de points bonus !");
+    }
+}
+
+function getFromStorage(name){
+    if (localStorage.getItem(name) === null){
+        return 0;
+    } else {
+        return Number(localStorage.getItem(name));
     }
 }
