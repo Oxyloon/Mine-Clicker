@@ -7,9 +7,11 @@ let bonusclicks = 0;
 let clicksbonus = 1;
 let counter = 0;
 
-let audio1 = new Audio('styles/anvil.mp3');
-let audio2 = new Audio('styles/tnt_explosion.mp3');
-let audio3 = new Audio('styles/big_tnt_explosion.mp3');
+document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
+document.getElementById('clicksTotal').innerHTML = "Nombre de clics au total : " + clicksTotal;
+document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
+document.getElementById('bonus').innerHTML = "Pts disponible : " + bonus;
+document.getElementById('clicksbonus').innerHTML = "Bonus actuel : + " + clicksbonus;
 
 let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
 let img = document.querySelector("main");
@@ -50,7 +52,7 @@ function clics() {
 
 
 function bonus1() { 
-   
+let audio1 = new Audio('styles/anvil.mp3');
     if (bonus >=2) {
             if (clicksbonus >= 32){
                 alert("Tu es au maximum des améliorations !");
@@ -71,6 +73,7 @@ function bonus1() {
 
 
 function bonus2() {
+let audio2 = new Audio('styles/tnt_explosion.mp3');
     if (bonus >=5) {
         audio2.play();
             bonus -=5;
@@ -86,6 +89,7 @@ function bonus2() {
 
 
 function bonus3() {
+let audio3 = new Audio('styles/big_tnt_explosion.mp3');
     if (bonus >=10) {
         audio3.play();
             bonus -=10;
