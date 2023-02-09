@@ -4,16 +4,17 @@ body {
     background-size: cover;
     background-size: auto;
 }
+
 * {
     cursor: url("Cursor.cur"), pointer;
     font-family: 'Minecraft';
 }
 
-
 header {
     text-align: center;
     text-decoration: none;
 }
+
 h1{
     color: rgb(22, 119, 22);
 }
@@ -24,11 +25,19 @@ button {
     font-size: 1em; 
     box-shadow: transparent;
 }
+
 .bonus {
     background-color: rgba(255, 255, 255, 0.342); 
     position: absolute;
     top: 50%;
     right: 5%;
+    transform: translateY(-50%);
+}
+
+.lava {
+    position: absolute;
+    top: 10%;
+    left: 5%;
     transform: translateY(-50%);
 }
 
@@ -57,4 +66,3 @@ footer {
     right: 0px;
     margin-bottom: 0px;
 }
-
