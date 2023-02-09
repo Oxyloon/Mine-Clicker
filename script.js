@@ -106,7 +106,7 @@ function ResetLocalStorage() {
 let audio4 = new Audio('styles/lava_destroy.mp3');
     localStorage.clear();
     audio4.play();
-    setTimeout(function{
+    setTimeout(function(){
         window.location.reload();
      }, 3000);  
 }
