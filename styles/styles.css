@@ -35,10 +35,21 @@ button {
 }
 
 .lava {
+    height: 10%;
     position: absolute;
     top: 10%;
     left: 5%;
     transform: translateY(-50%);
+}
+
+.lava button{
+    height: 100%;
+    width: 100%;
+}
+
+.lava button img{
+    height: 100%;
+    width: 100%;
 }
 
 main {
@@ -65,4 +76,14 @@ footer {
     left: 0px;
     right: 0px;
     margin-bottom: 0px;
+}
+
+.bonus1 {
+    background-image: url('Enchanted_Diamond_Pickaxe.webp');
+}
+.bonus2 {
+    background-image: url('Enchanted_Diamond_Pickaxe.webp');
+}
+.bonus3 {
+    background-image: url('Enchanted_Diamond_Pickaxe.webp');
 }

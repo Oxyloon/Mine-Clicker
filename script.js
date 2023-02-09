@@ -11,7 +11,7 @@ document.getElementById('clicks').innerHTML = "Nombre de clics : " + clicks;
 document.getElementById('clicksTotal').innerHTML = "Nombre de clics au total : " + clicksTotal;
 document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
 document.getElementById('bonus').innerHTML = "Pts disponible : " + bonus;
-document.getElementById('clicksAdd').innerHTML = "Bonus actuel : + " + clicksAdd;
+document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
 
 function clics() {
     clicksTotal +=1;
@@ -27,8 +27,8 @@ function clics() {
             counter ++;
             blocksTotal +=1;
             blocks +=1;
-                document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
             clicks =0;
+                document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
                 document.getElementById("main-image").src=images[counter %5]
         } 
 
@@ -54,14 +54,16 @@ localStorage.setItem('clicksAdd',clicksAdd);
 function bonus1() {
 let audio1 = new Audio('styles/anvil.mp3'); 
     if (bonus >=2) {
+        document.getElementsByClassName('bonus1').style = ""
             if (clicksAdd >= 9){
                 alert("Tu es au maximum des améliorations !");
             } else {
-                bonus -=2;
-                clicksAdd +=1;
-                    document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
-                    document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
-                    audio1.play();
+                audio1.play();
+                    bonus -=2;
+                    clicksAdd +=1;
+                        document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
+                        document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
+                    
             }            
         } else {
             alert("Tu n'as pas assez de points bonus !");
@@ -106,7 +108,7 @@ function ResetLocalStorage() {
 let audio4 = new Audio('styles/lava_destroy.mp3');
     localStorage.clear();
     audio4.play();
-    setTimeout(function(){
-        window.location.reload();
-     }, 3000);  
+        setTimeout(function(){
+            window.location.reload();
+        }, 3000);  
 }
