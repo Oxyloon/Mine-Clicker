@@ -78,12 +78,19 @@ footer {
     margin-bottom: 0px;
 }
 
-.bonus1 {
-    background-image: url('Enchanted_Diamond_Pickaxe.webp');
+.bonus1, .bonus2, .bonus3 {
+    height: 5%;
+    width: 50%;
+    position: relative;
+    left: 25%;
 }
-.bonus2 {
-    background-image: url('Enchanted_Diamond_Pickaxe.webp');
+
+.bonus1 button, .bonus2 button, .bonus3 button{
+    height: 100%;
+    width: 100%;
 }
-.bonus3 {
-    background-image: url('Enchanted_Diamond_Pickaxe.webp');
+
+.bonus1 button img, .bonus2 button img, .bonus3 button img{
+    height: 100%;
+    width: 100%;
 }
