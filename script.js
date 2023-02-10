@@ -57,41 +57,42 @@ localStorage.setItem('clicksAdd',clicksAdd);
 }
 
 
-if (bonus >=2) {
-    let img = document.createElement("img");
-        img.src = "/styles/Enchanted_Diamond_Pickaxe.webp";
-    let div = document.getElementById("bonus1");
-    div.appendChild(img);
-    } else {
+    if (bonus >=2) {
         let img = document.createElement("img");
-            img.src = "/styles/BarrierNew.png";
+            img.src = "/styles/Enchanted_Diamond_Pickaxe.webp";
         let div = document.getElementById("bonus1");
         div.appendChild(img);
-}
+        } else {
+            let img = document.createElement("img");
+                img.src = "/styles/BarrierNew.png";
+            let div = document.getElementById("bonus1");
+            div.appendChild(img);
+    }
 
-if (bonus >=5) {
-    let img = document.createElement("img");
-        img.src = "/styles/wither.png";
-    let div = document.getElementById("bonus2");
-    div.appendChild(img);
-    } else {
+    if (bonus >=5) {
         let img = document.createElement("img");
-            img.src = "/styles/BarrierNew.png";
+            img.src = "/styles/wither.png";
         let div = document.getElementById("bonus2");
         div.appendChild(img);
-}
+        } else {
+            let img = document.createElement("img");
+                img.src = "/styles/BarrierNew.png";
+            let div = document.getElementById("bonus2");
+            div.appendChild(img);
+    }
 
-if (bonus >=10) {
-    let img = document.createElement("img");
-        img.src = "/styles/herobrine.png";
-    let div = document.getElementById("bonus3");
-    div.appendChild(img);
-    } else {
+    if (bonus >=10) {
         let img = document.createElement("img");
-            img.src = "/styles/BarrierNew.png";
+            img.src = "/styles/herobrine.png";
         let div = document.getElementById("bonus3");
         div.appendChild(img);
-}
+        } else {
+            let img = document.createElement("img");
+                img.src = "/styles/BarrierNew.png";
+            let div = document.getElementById("bonus3");
+            div.appendChild(img);
+    }
+
 
 function bonus1() {
 let audio1 = new Audio('styles/anvil.mp3'); 
@@ -152,5 +153,5 @@ let audio4 = new Audio('styles/lava_destroy.mp3');
     audio4.play();
         setTimeout(function(){
             window.location.reload();
-        }, 3000);  
+        }, 1900);  
 }
