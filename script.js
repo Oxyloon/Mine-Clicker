@@ -96,7 +96,7 @@ function bonus1() {
 let audio1 = new Audio('styles/anvil.mp3'); 
     if (bonus >=2) {
             if (clicksAdd >= 9){
-                alert("Tu es au maximum des améliorations !");
+                alert("Tu es au maximum des ameliorations !");
                 
             } else {
                 audio1.play();
