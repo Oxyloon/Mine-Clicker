@@ -30,7 +30,7 @@ function clics() {
             
         if (clicks >= 32) 
         {
-        let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
+        let images = ['/styles/dirt.png', '/styles/stone.png', '/styles/sandstone.png', '/styles/stonebricks.png', '/styles/deepslate_diamond.png'];
         let img = document.querySelector("main");
         let counter = 0;
             counter ++;
