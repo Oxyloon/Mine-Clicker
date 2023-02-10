@@ -6,6 +6,7 @@ let bonus = getFromStorage("bonus");
 let bonusclicks = 0;
 let clicksAdd = getFromStorage("clicksAdd");
 
+bonusimg();
 
 document.getElementById('clics').addEventListener('click',clics);
 document.getElementById('bonus1').addEventListener('click',bonus1);
@@ -49,49 +50,46 @@ function clics() {
         if (bonusclicks >=1) {
             clicks += bonusclicks;
         }
-localStorage.setItem('clicks',clicks);
-localStorage.setItem('clicksTotal',clicksTotal);
-localStorage.setItem('blocksTotal',blocksTotal);
-localStorage.setItem('bonus',bonus);
-localStorage.setItem('clicksAdd',clicksAdd);
+        saveStorage();
+        bonusimg();
 }
-
-
-    if (bonus >=2) {
-        let img = document.createElement("img");
-            img.src = "/styles/Enchanted_Diamond_Pickaxe.webp";
-        let div = document.getElementById("bonus1");
-        div.appendChild(img);
-        } else {
+    
+function bonusimg(){
+        if (bonus >=2) {
             let img = document.createElement("img");
-                img.src = "/styles/BarrierNew.png";
+                img.src = "/styles/Enchanted_Diamond_Pickaxe.webp";
             let div = document.getElementById("bonus1");
-            div.appendChild(img);
-    }
-
-    if (bonus >=5) {
-        let img = document.createElement("img");
-            img.src = "/styles/wither.png";
-        let div = document.getElementById("bonus2");
-        div.appendChild(img);
-        } else {
-            let img = document.createElement("img");
+            div.replaceChildren(img);
+            } else {
+                let img = document.createElement("img");
                 img.src = "/styles/BarrierNew.png";
+                let div = document.getElementById("bonus1");
+                div.replaceChildren(img);
+            }
+    
+        if (bonus >=5) {
+            let img = document.createElement("img");
+                img.src = "/styles/wither.png";
             let div = document.getElementById("bonus2");
-            div.appendChild(img);
-    }
-
-    if (bonus >=10) {
-        let img = document.createElement("img");
-            img.src = "/styles/herobrine.png";
-        let div = document.getElementById("bonus3");
-        div.appendChild(img);
-        } else {
-            let img = document.createElement("img");
+            div.replaceChildren(img);
+            } else {
+                let img = document.createElement("img");
                 img.src = "/styles/BarrierNew.png";
+                let div = document.getElementById("bonus2");
+                div.replaceChildren(img);
+            }
+        if (bonus >=10) {
+            let img = document.createElement("img");
+                img.src = "/styles/herobrine.png";
             let div = document.getElementById("bonus3");
-            div.appendChild(img);
-    }
+            div.replaceChildren(img);
+            } else {
+                let img = document.createElement("img");
+                img.src = "/styles/BarrierNew.png";
+                let div = document.getElementById("bonus3");
+                div.replaceChildren(img);
+            } 
+}
 
 
 function bonus1() {
@@ -99,17 +97,20 @@ let audio1 = new Audio('styles/anvil.mp3');
     if (bonus >=2) {
             if (clicksAdd >= 9){
                 alert("Tu es au maximum des améliorations !");
+                
             } else {
                 audio1.play();
                     bonus -=2;
                     clicksAdd +=1;
                         document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                         document.getElementById('clicksAdd').innerHTML = "Bonus actuel : +" + clicksAdd;
-                    
-            }            
+                        saveStorage();              
+            }     
+                  
         } else {
             alert("Tu n'as pas assez de points bonus !");
     }
+    bonusimg();
 }
 
 function bonus2() {
@@ -120,6 +121,8 @@ let audio2 = new Audio('styles/tnt_explosion.mp3');
             blocksTotal +=1000;
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
+                saveStorage();
+                bonusimg();
     } else {
         alert("Tu n'as pas assez de points bonus !");
     }
@@ -133,6 +136,8 @@ let audio3 = new Audio('styles/big_tnt_explosion.mp3');
             blocksTotal +=10000;
                 document.getElementById('bonus').innerHTML = "Pts disponible :  " + bonus;
                 document.getElementById('blocksTotal').innerHTML = "Nombre de blocks detruits : " + blocksTotal;
+                saveStorage();
+                bonusimg();
     } else {
         alert("Tu n'as pas assez de points bonus !");
     }
@@ -154,4 +159,12 @@ let audio4 = new Audio('styles/lava_destroy.mp3');
         setTimeout(function(){
             window.location.reload();
         }, 1900);  
+}
+
+function saveStorage(){
+    localStorage.setItem('clicks',clicks);
+    localStorage.setItem('clicksTotal',clicksTotal);
+    localStorage.setItem('blocksTotal',blocksTotal);
+    localStorage.setItem('bonus',bonus);
+    localStorage.setItem('clicksAdd',clicksAdd);
 }
