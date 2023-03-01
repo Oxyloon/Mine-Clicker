@@ -30,7 +30,7 @@ function clics() {
             
         if (clicks >= 32) 
         {
-        let images = ['/styles/dirt.png', '/styles/stone.png', '/styles/sandstone.png', '/styles/stonebricks.png', '/styles/deepslate_diamond.png'];
+        let images = ['styles/dirt.png', 'styles/stone.png', 'styles/sandstone.png', 'styles/stonebricks.png', 'styles/deepslate_diamond.png'];
         let img = document.querySelector("main");
         let counter = 0;
             counter ++;
@@ -57,35 +57,35 @@ function clics() {
 function bonusimg(){
         if (bonus >=2) {
             let img = document.createElement("img");
-                img.src = "/styles/Enchanted_Diamond_Pickaxe.gif";
+                img.src = "styles/Enchanted_Diamond_Pickaxe.gif";
             let div = document.getElementById("bonus1");
             div.replaceChildren(img);
             } else {
                 let img = document.createElement("img");
-                img.src = "/styles/BarrierNew.png";
+                img.src = "styles/BarrierNew.png";
                 let div = document.getElementById("bonus1");
                 div.replaceChildren(img);
             }
     
         if (bonus >=5) {
             let img = document.createElement("img");
-                img.src = "/styles/wither.png";
+                img.src = "styles/wither.png";
             let div = document.getElementById("bonus2");
             div.replaceChildren(img);
             } else {
                 let img = document.createElement("img");
-                img.src = "/styles/BarrierNew.png";
+                img.src = "styles/BarrierNew.png";
                 let div = document.getElementById("bonus2");
                 div.replaceChildren(img);
             }
         if (bonus >=10) {
             let img = document.createElement("img");
-                img.src = "/styles/herobrine.png";
+                img.src = "styles/herobrine.png";
             let div = document.getElementById("bonus3");
             div.replaceChildren(img);
             } else {
                 let img = document.createElement("img");
-                img.src = "/styles/BarrierNew.png";
+                img.src = "styles/BarrierNew.png";
                 let div = document.getElementById("bonus3");
                 div.replaceChildren(img);
             } 
